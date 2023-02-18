@@ -71,6 +71,8 @@ You also need to enable the Message Content Intent:
 
 - [pm2](https://pm2.io/docs/runtime/guide/installation/): To keep your bot alive even after killing your terminal.
 
+PM2: https://pm2.io/docs/runtime/guide/installation/ (If you are want your bot to run 24/7)
+
 To use GPT-Shell, you will need to:
 - Clone the project:
 ```

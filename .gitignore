@@ -17,4 +17,6 @@ tmp
 node_modules
 .yarn/cache/*
 package-lock.json
+.DS_Store
+yarn/cache/*
 yarn.lock
