@@ -1762,10 +1762,10 @@ pidusage@~3.0:
   dependencies:
     safe-buffer "^5.2.1"
 
-pinecone-client@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.npmjs.org/pinecone-client/-/pinecone-client-1.0.1.tgz"
-  integrity sha512-Cgv9vtW8yU7DQwK57CsBgBFNliItkBKBvCq7HRt0I84Apa0MJg/WgE5LEe7SmGVKMVrbHX7GqrZH3IKE0UvrGA==
+pinecone-client@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/pinecone-client/-/pinecone-client-1.1.0.tgz#ad576fab2b3ef66dbc673ab868a5e852b82ccf88"
+  integrity sha512-+5kW2OwW/eo3W/MKIktEhRYwq1PwmZdxTOGi34WZbpbt0C4OpzjW2uUx92bdU2/EnUw/A9M870g3y/vAL1H2HA==
   dependencies:
     ky "^0.33.1"
 
