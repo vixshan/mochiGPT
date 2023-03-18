@@ -2069,14 +2069,14 @@ __metadata:
     nodemon: ^2.0.21
     openai: ^3.2.1
     pinecone-client: ^1.0.1
-    pm2: ^5.2.2
+    pm2: ^5.3.0
     pnpapi: ^0.0.0
     rimraf: ^4.4.0
     ts-node: ^10.9.1
     ts-node-dev: ^2.0.0
     ts-toolbelt: ^9.6.0
     tsc: ^2.0.4
-    typescript: 4.9.5
+    typescript: 5.0.2
     uuid: ^9.0.0
     vite: ^4.2.0
     vitest: ^0.29.2
@@ -3170,9 +3170,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"pm2@npm:^5.2.2":
-  version: 5.2.2
-  resolution: "pm2@npm:5.2.2"
+"pm2@npm:^5.3.0":
+  version: 5.3.0
+  resolution: "pm2@npm:5.3.0"
   dependencies:
     "@pm2/agent": ~2.0.0
     "@pm2/io": ~5.0.0
@@ -3212,7 +3212,7 @@ __metadata:
     pm2-dev: bin/pm2-dev
     pm2-docker: bin/pm2-docker
     pm2-runtime: bin/pm2-runtime
-  checksum: 091213dc7fc220b814e91dea35525f6b37f3d27081345be82b42873c605055f339bec67287ab70a3d41c62fe2d3edbd58722f4b2c4aa5a3d5479d5e4900b0057
+  checksum: ca1a655ab11b8aa8f7c10098578e7f0ed508fb19fae02694c5478f4167a75cb150eb2c305d734b7420696b70193bb765ffbbca498d2ce427f85ae9d25ef19842
   languageName: node
   linkType: hard
 
@@ -4157,23 +4157,23 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:4.9.5":
-  version: 4.9.5
-  resolution: "typescript@npm:4.9.5"
+"typescript@npm:5.0.2":
+  version: 5.0.2
+  resolution: "typescript@npm:5.0.2"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: ee000bc26848147ad423b581bd250075662a354d84f0e06eb76d3b892328d8d4440b7487b5a83e851b12b255f55d71835b008a66cbf8f255a11e4400159237db
+  checksum: bef1dcd166acfc6934b2ec4d72f93edb8961a5fab36b8dd2aaf6f4f4cd5c0210f2e0850aef4724f3b4913d5aef203a94a28ded731b370880c8bcff7e4ff91fc1
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@4.9.5#~builtin<compat/typescript>":
-  version: 4.9.5
-  resolution: "typescript@patch:typescript@npm%3A4.9.5#~builtin<compat/typescript>::version=4.9.5&hash=d73830"
+"typescript@patch:typescript@5.0.2#~builtin<compat/typescript>":
+  version: 5.0.2
+  resolution: "typescript@patch:typescript@npm%3A5.0.2#~builtin<compat/typescript>::version=5.0.2&hash=d73830"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: 2eee5c37cad4390385db5db5a8e81470e42e8f1401b0358d7390095d6f681b410f2c4a0c496c6ff9ebd775423c7785cdace7bcdad76c7bee283df3d9718c0f20
+  checksum: bdbf3d0aac0d6cf010fbe0536753dc19f278eb4aba88140dcd25487dfe1c56ca8b33abc0dcd42078790a939b08ebc4046f3e9bb961d77d3d2c3cfa9829da4d53
   languageName: node
   linkType: hard
 
