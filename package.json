@@ -30,7 +30,6 @@
     "ts-node": "^10.9.1",
     "ts-node-dev": "^2.0.0",
     "typescript": "5.0.2",
-    "vite": "^4.1.4",
     "vitest": "^0.29.2"
   },
   "packageManager": "yarn@3.3.0",
