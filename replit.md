@@ -26,7 +26,7 @@ Otherwise the bot will default to the `start` script in the `package.json` file 
 ```
 ### Option 2: Using the start Button
 Typing the command in the terminal is a bit tedious, so you can use the start button instead. To do this; 
-- While forking the repl, you can paste one of the [above commands](#step-2-setting-up-the-run-command) in the start command box.
+- While forking the repl, you can paste one of the [above commands](#option-1-typing-the-start-command-in-the-terminal) in the start command box.
 - Or you can go to the `package.json` file and change the start script as follows:
 ```json
 "start": "node ./lib/index.js",
