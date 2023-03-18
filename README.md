@@ -59,7 +59,7 @@ You also need to enable the Message Content Intent:
 
 ## Setup
 
-- You can try to fork the [replit here](https://replit.com/@Ephemeros/mochiGPT)
+- You can see the [Replit installation guide here](./replit.md)
 
 - Or you can set it up on your machine.
 
