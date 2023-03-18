@@ -4,7 +4,7 @@
   "description": "",
   "scripts": {
     "dev": "nodemon ./src/index.ts",
-    "build": "npm run rimraf ./lib/ && npm run tsc && echo build complete",
+    "build": "rimraf ./lib/ && tsc && echo build complete",
     "start": "pm2 start ./lib/index.js --name mochiGPT && pm2 save && pm2 logs",
     "test": "vitest run",
     "vitest": "vitest"
