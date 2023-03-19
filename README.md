@@ -76,7 +76,7 @@ PM2: https://pm2.io/docs/runtime/guide/installation/ (If you are want your bot t
 To use mochiGPT, you will need to:
 - Clone the project:
 ```
-git clone https://github.com/firtoz/mochiGPT.git
+git clone https://github.com/vikkshan/mochiGPT.git
 ```
 - Open the terminal in the project's folder:
 ```
