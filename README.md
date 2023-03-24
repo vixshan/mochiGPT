@@ -67,8 +67,6 @@ You also need to enable the Message Content Intent:
 
 - [Nodejs](https://nodejs.org/en/): (18 or above)
 
-- [Yarn](https://yarnpkg.com/getting-started/install): (after installing nodejs)
-
 - [pm2](https://pm2.io/docs/runtime/guide/installation/): To keep your bot alive even after killing your terminal.
 
 PM2: https://pm2.io/docs/runtime/guide/installation/ (If you are want your bot to run 24/7)
@@ -195,7 +193,7 @@ npm start
 ```
 >You can also run `npm run start` to start the bot.
 
-- NOTE: running `npm start` or `npm run start` will start the bot with PM2 and give it the name "mochiGPT". You can replace "mochiGPT" with a name of your choice in [package.json](https://github.com/firtoz/mochiGPT/blob/main/package.json). It will also show logs for the PM2 running processes and save them.
+- NOTE: running `npm start` or `npm run start` will start the bot with PM2 and give it the name "mochiGPT". You can replace "mochiGPT" with a name of your choice in [package.json](./package.json). It will also show logs for the PM2 running processes and save them.
 >NOTE: If you get the error:
 ```js
 [PM2][ERROR] Script already launched, add -f option to force re-execution
