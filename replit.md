@@ -4,7 +4,7 @@ This guide will show you how to run the bot on replit.
 ## Step 1: Forking The Repository
 First, you need to fork the repository. To do this, you can either:
 
-- You can try to fork the [replit here](https://replit.com/@Ephemeros/mochiGPT)
+- You can try to fork the [replit here](https://replit.com/@vikshan/mochiGPT)
 - Or you can fork the repository on GitHub and then import it to replit.
 - Click on the `Import from GitHub` button and paste the URL of the repository.
 
