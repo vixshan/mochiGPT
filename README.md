@@ -1,11 +1,11 @@
-# GPT-Shell
+# mochiGPT
 
-| :exclamation:  The new version of GPT-Shell is called Erin! Find out more at [Erin's Website!](https://erin.ac/?ref=github-readme) :exclamation: |
+| :exclamation:  This is a work in progress :exclamation: |
 |--------------------------------------------------------------------------------------------------------------------------------------------------|
 
 GPT-Shell is an OpenAI based chat-bot that is similar to OpenAI's [ChatGPT](https://chat.openai.com/).
 
-It allows users to converse with a virtual companion. It uses nodejs and typescript, as well as modern yarn,
+It allows users to converse with a virtual companion. It uses `nodejs` and `typescript`.
 to create a seamless conversation experience.
 
 It can also generate images based on your conversation!
@@ -16,7 +16,7 @@ https://user-images.githubusercontent.com/108406948/210852737-c1a30a08-ed0d-4cb9
 
 You can try the bot on the official Discord server:
 
-[![](https://dcbadge.vercel.app/api/server/TruuVEBmcC)](https://discord.gg/TruuVEBmcC)
+[![](https://dcbadge.vercel.app/api/server/Dwnf3vQSz4)](https://discord.gg/Dwnf3vQSz4)
 
 ## Usage
 
@@ -25,7 +25,7 @@ To interact with GPT-Shell, users can:
 - Ping the bot in a channel it's in
 - Message the bot directly
 
-The `/chat-gpt` command will start a new conversation thread, and whenever the user types something,
+The `/mochi-gpt` command will start a new conversation thread, and whenever the user types something,
 the bot will respond.
 
 The bot is able to handle multiple conversations at once,
@@ -97,20 +97,20 @@ Ensure that your `.env.local` looks like this:
 <details>
   <summary> [EXPAND] Click to see .env.local</summary>
   
-```
+```md
 # MongoDB:
 MONGODB_URI=
-DB_NAME=CHAT_DB
+DB_NAME=mochiGPT
 
 # Bot Token from Discord:
 BOT_TOKEN=
 
 # Commands:
-COMMAND_NAME=chat-gpt
-PRIVATE_COMMAND_NAME=chat-gpt-private
-CONFIG_COMMAND_NAME=chat-gpt-config
-CUSTOM_PROMPT_COMMAND_NAME=chat-gpt-prompt
-DRAW_COMMAND_NAME=draw-gpt
+COMMAND_NAME=mochi-gpt
+PRIVATE_COMMAND_NAME=mochi-private
+CONFIG_COMMAND_NAME=mochi-config
+CUSTOM_PROMPT_COMMAND_NAME=mochi-prompt
+DRAW_COMMAND_NAME=mochi-draw
 
 # Discord Server Details:
 MAIN_SERVER_ID=
@@ -130,11 +130,10 @@ MongoDB:
 
 Bot Token:
 - BOT_TOKEN: The Discord bot token
-  - You can get it by following https://discord.com/developers/applications then selecting your app and then selecting
-    "Bot".
+  - You can get it from your [Discord Dev Portal](https://discord.com/developers/applications) by selecting your app and then selecting "Bot".
 
 Commands:
-- COMMAND_NAME: The name of the chat-gpt command
+- COMMAND_NAME: The main command for chat initialisation.
 - PRIVATE_COMMAND_NAME: Command to create private threads.
 - CONFIG_COMMAND_NAME: The name of the config command
 - CUSTOM_PROMPT_COMMAND_NAME: (Optional) The name of the command for custom prompts
@@ -157,7 +156,89 @@ Discord Server Details:
 Extras:
 - WOLFRAM_APP_ID: Used for the Wolfram Alpha ability.
 
-  Can create an app at https://developer.wolframalpha.com/portal/myapps and get its id.
+  Can create an app at [WolframAlpha Dev Portal](https://developer.wolframalpha.com/portal/myapps) and get its id.
+
+## Start your bot
+Set up the environment variables as described above.
+- Install pm2:
+
+With npm:
+
+```
+npm install pm2 -g
+```
+With yarn:
+
+```
+yarn global add pm2
+```
+With debian, use the install script:
+
+```
+apt update && apt install sudo curl && curl -sL https://raw.githubusercontent.com/Unitech/pm2/master/packager/setup.deb.sh | sudo -E bash -
+```
+- Then to start a development environment, run 
+```
+npm run dev
+```
+This way, whenever you change the code, it will restart the bot to update.
+
+- To build and start the bot, run 
+```
+npm run build
+``` 
+and then 
+```
+npm start
+```
+>You can also run `npm run start` to start the bot.
+
+- NOTE: running `npm start` or `npm run start` will start the bot with PM2 and give it the name "mochiGPT". You can replace "mochiGPT" with a name of your choice in [package.json](./package.json). It will also show logs for the PM2 running processes and save them.
+>NOTE: If you get the error:
+```js
+[PM2][ERROR] Script already launched, add -f option to force re-execution
+```
+>It means that the bot is already running. You can delete it by running the following command followed by the command to start the bot, i.e. `npm run start`:
+```
+pm2 delete mochiGPT
+```
+> Or simply restart it by running:
+```
+pm2 restart mochiGPT
+```
+
+- If you are in dev environment, use `node .` or `npm run dev` to test your code:
+```
+node .
+```
+Once you are satisfied with the changes run:
+```
+pm2 restart mochiGPT && pm2 logs
+```
+You can also restart it from the [pm2.io dashboard](https://pm2.io/) as shown bellow:
+<details>
+<summary>Expand to see image</summary>
+
+![image](https://cdn.discordapp.com/attachments/1072834906742345808/1076183450417123358/image.png)
+
+</details>
+
+## Configuration
+
+Go to your server, and type the config command, and set the API key for your server using the config.
+
+```
+/mochi-config
+```
+
+<details>
+<summary>Expand to see config image</summary>
+
+![config-api-key.png](config-api-key.png)
+
+</details>
+
+
 
 ## Start your bot
 Set up the environment variables as described above.
@@ -250,7 +331,7 @@ How it works:
 To be able to set this up, use the config command on the main server:
 
 ```
-/chat-gpt-config
+/mochi-config
 ```
 
 ![config.png](config.png)
@@ -273,7 +354,7 @@ If you want the bot to behave differently, you can use a custom prompt.
 
 This can be done in a new channel dedicated to the bot, or a new conversation thread, or in DMs.
 
-You can use the `/chat-gpt-prompt` command, if you have the permissions, and you can set the custom prompt
+You can use the `/mochi-prompt` command, if you have the permissions, and you can set the custom prompt
 for the bot by filling the form.
 
 This command can be used in:
@@ -282,18 +363,18 @@ This command can be used in:
 - DMs
 
 The temperature is the same as OpenAI's temperature parameter. 0 means it becoems repetitive, 1 means it becomes a bit chaotic.
-Default is 0.8 for GPT-Shell.
+Default is 0.8 for mochiGPT.
 
 ![custom-prompt.png](custom-prompt.png)
 
 
 ## Contributions
 
-We welcome contributions to GPT-Shell. If you have an idea for a new feature or have found a bug,
+We welcome contributions to mochiGPT. If you have an idea for a new feature or have found a bug,
 please open an issue on GitHub. We would also appreciate any sponsorships or donations.
 
-You can sponsor us through our GitHub sponsor page [here](https://github.com/sponsors/firtoz).
+You can sponsor us through our GitHub sponsor page [here](https://github.com/sponsors/vikkshan).
 
 ## License
 
-GPT-Shell is released under the MIT License.
+mochiGPT is released under the MIT License.
