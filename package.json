@@ -22,7 +22,7 @@
   "main": "lib/index.js",
   "devDependencies": {
     "@types/lodash": "^4.14.194",
-    "@types/pnpapi": "^0.0.2",
+    "@types/pnpapi": "^0.0.3",
     "@types/rimraf": "^4.0.5",
     "@types/uuid": "^9.0.4",
     "cross-env": "^7.0.3",
