@@ -1,18 +1,18 @@
 # Running The Bot On Replit
-This guide will show you how to run the bot on replit.
+This guide will show you how to run **Mimo** on replit.
 
 ## Step 1: Forking The Repository
 First, you need to fork the repository. To do this, you can either:
 
-- You can try to fork the [replit here](https://replit.com/@vikshan/mochiGPT)
+- You can try to fork the [replit here](https://replit.com/@vikshan/mimo) and then import it to replit.
 - Or you can fork the repository on GitHub and then import it to replit.
 - Click on the `Import from GitHub` button and paste the URL of the repository.
 
 ## Step 2: Setting Up The Run Command
-There are two ways to run the bot correctly.
+There are two ways to run **Mimo** correctly.
 
 ### Option 1: Typing the start command in the terminal
-You can run the bot by typing the following command in the terminal:
+You can run **Mimo** by typing the following command in the terminal:
 ```bash
 node .
 ```
@@ -20,9 +20,9 @@ Or
 ```bash
 npm run start-replit
 ```
-Otherwise the bot will default to the `start` script in the `package.json` file if you press the start button, which is:
+Otherwise **Mimo** will default to the `start` script in the `package.json` file if you press the start button, which is:
 ```json
-"start": "pm2 start ./lib/index.js --name mochiGPT && pm2 save && pm2 logs",
+"start": "pm2 start ./lib/index.js --name mimo && pm2 save && pm2 logs",
 ```
 ### Option 2: Using the start Button
 Typing the command in the terminal is a bit tedious, so you can use the start button instead. To do this; 
@@ -41,4 +41,4 @@ You need to set up the environment variables. To do this, go to the `secrets` ta
 Docs coming soon.
 
 ## Troubleshooting
-Everything should be working now. If you have any issues, feel free to open an issue or join the [Discord server](https://discord.gg/Dwnf3vQSz4).
+Everything should be working now. If you have any issues, feel free to open an issue or join the [Discord server](https://discord.gg/wMxe5PsnNg).

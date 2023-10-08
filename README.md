@@ -1,9 +1,9 @@
-# mochiGPT
+# **Mimo**
 
 | :exclamation:  This is a work in progress :exclamation: |
 |--------------------------------------------------------------------------------------------------------------------------------------------------|
 
-mochiGPT is an OpenAI based chat-bot that is similar to OpenAI's [ChatGPT](https://chat.openai.com/).
+**Mimo** is an OpenAI based chat-bot that is similar to OpenAI's [ChatGPT](https://chat.openai.com/).
 
 It allows users to converse with a virtual companion. It uses `nodejs` and `typescript`.
 to create a seamless conversation experience.
@@ -14,21 +14,20 @@ https://user-images.githubusercontent.com/108406948/210852737-c1a30a08-ed0d-4cb9
 
 ## Try it out
 
-You can try the bot on the official Discord server:
+You can try **Mimo** on the official Discord server:
 
-[![](https://dcbadge.vercel.app/api/server/Dwnf3vQSz4)](https://discord.gg/Dwnf3vQSz4)
+[![](https://dcbadge.vercel.app/api/server/wMxe5PsnNg)](https://discord.gg/wMxe5PsnNg)
 
 ## Usage
 
-To interact with mochiGPT, users can:
-- Use the `/mochi-gpt` command to start a conversation with the bot
-- Ping the bot in a channel it's in
-- Message the bot directly
+To interact with **Mimo**, users can:
+- Use the `/mimo` command to start a conversation with **Mimo**
+- Ping **Mimo** in a channel she's in
+- DM **Mimo**
 
-The `/mochi-gpt` command will start a new conversation thread, and whenever the user types something,
-the bot will respond.
+The `/mimo` command will start a new conversation thread, and whenever the user types something, **Mimo** will respond.
 
-The bot is able to handle multiple conversations at once,
+**Mimo** is able to handle multiple conversations at once,
 so you can start as many conversations as you like.
 
 ## Bot Setup
@@ -69,16 +68,15 @@ You also need to enable the Message Content Intent:
 
 - [pm2](https://pm2.io/docs/runtime/guide/installation/): To keep your bot alive even after killing your terminal.
 
-PM2: https://pm2.io/docs/runtime/guide/installation/ (If you are want your bot to run 24/7)
 
-To use mochiGPT, you will need to:
+To use **Mimo**, you will need to:
 - Clone the project:
 ```
-git clone https://github.com/vikkshan/mochiGPT.git
+git clone https://github.com/vikkshan/mimo.git
 ```
 - Open the terminal in the project's folder:
 ```
-cd mochiGPT
+cd mimo
 ```
 (in windows, right click somewhere in the folder and select "Open In Terminal")
 if you see something about powershell, type `cmd` and hit enter, to go to the simpler command line terminal.
@@ -91,27 +89,27 @@ yarn install
 
 ## Setting up Environment Variables
 
-The following environment variables are required for mochiGPT to work properly.
+The following environment variables are required for **Mimo** to work properly.
 
-You can set the environment variables in any way you like, or place an .env.local file at the root of your project (rename `example.env.local` to `.env.local`),
+You can set the environment variables in any way you like, or place an `.env.local` file at the root of your project (rename `example.env.local` to `.env.local`),
 Ensure that your `.env.local` looks like this:
 <details>
-  <summary> [EXPAND] Click to see .env.local</summary>
+  <summary> [EXPAND] Click to see `.env.local`</summary>
   
 ```md
 # MongoDB:
 MONGODB_URI=
-DB_NAME=mochiGPT
+DB_NAME=mimo
 
 # Bot Token from Discord:
 BOT_TOKEN=
 
 # Commands:
-COMMAND_NAME=mochi-gpt
-PRIVATE_COMMAND_NAME=mochi-private
-CONFIG_COMMAND_NAME=mochi-config
-CUSTOM_PROMPT_COMMAND_NAME=mochi-prompt
-DRAW_COMMAND_NAME=mochi-draw
+COMMAND_NAME=mimo
+PRIVATE_COMMAND_NAME=private
+CONFIG_COMMAND_NAME=config
+CUSTOM_PROMPT_COMMAND_NAME=prompt
+DRAW_COMMAND_NAME=draw
 
 # Discord Server Details:
 MAIN_SERVER_ID=
@@ -194,18 +192,20 @@ npm start
 ```
 >You can also run `npm run start` to start the bot.
 
-- NOTE: running `npm start` or `npm run start` will start the bot with PM2 and give it the name "mochiGPT". You can replace "mochiGPT" with a name of your choice in [package.json](./package.json). It will also show logs for the PM2 running processes and save them.
+- NOTE: running `npm start` or `npm run start` will start the bot with PM2 and give it the name "mimo". You can replace "mimo" with a name of your choice in [package.json](./package.json). It will also show logs for the PM2 running processes and save them.
+
 >NOTE: If you get the error:
 ```js
 [PM2][ERROR] Script already launched, add -f option to force re-execution
 ```
->It means that the bot is already running. You can delete it by running the following command followed by the command to start the bot, i.e. `npm run start`:
+>It means that mimo is already running. You can delete her by running the following command followed by the command to start mimo, i.e. `npm run start`:
 ```
-pm2 delete mochiGPT
+pm2 delete mimo
+npm run start
 ```
 > Or simply restart it by running:
 ```
-pm2 restart mochiGPT
+pm2 restart mimo
 ```
 
 - If you are in dev environment, use `node .` or `npm run dev` to test your code:
@@ -214,7 +214,7 @@ node .
 ```
 Once you are satisfied with the changes run:
 ```
-pm2 restart mochiGPT && pm2 logs
+pm2 restart mimo && pm2 logs
 ```
 You can also restart it from the [pm2.io dashboard](https://pm2.io/) as shown bellow:
 <details>
@@ -226,10 +226,10 @@ You can also restart it from the [pm2.io dashboard](https://pm2.io/) as shown be
 
 ## Configuration
 
-Go to your server, and type the config command, and set the API key for your server using the config.
+Go to your server, and type the `config` command, and set the API key for your server.
 
 ```
-/mochi-config
+/config
 ```
 
 <details>
@@ -243,7 +243,7 @@ Go to your server, and type the config command, and set the API key for your ser
 
 ## Long-Term Memory
 
-Starting from 2.0.0, the bot has the capacity to have a long-term memory.
+Starting from 2.0.0, **Mimo** has the capacity to have a long-term memory.
 
 <details>
 
@@ -254,14 +254,14 @@ This functionality is experimental, but internal testing shows that it works qui
 Does not work so well if the conversation has long pieces of code, because of token limitations.
 
 How it works:
-- the bot creates [embeddings](https://openai.com/blog/new-and-improved-embedding-model/) for every message in the conversation
+- **Mimo** creates [embeddings](https://openai.com/blog/new-and-improved-embedding-model/) for every message in the conversation
 - if the conversation is short, all the conversation history is included in the prompt
 - if the conversation is long enough, when a new message is sent, that message's embedding is compared to the conversation history, and only the most relevant messages will be included in the prompt.
 
-To be able to set this up, use the config command on the main server:
+To set this up, use the config command on the main server:
 
 ```
-/mochi-config
+/config
 ```
 
 ![config.png](config.png)
@@ -278,14 +278,14 @@ If you did it correctly, you should see something like this:
 
 
 ## Custom Prompts
-By default, the bot behaves like a helpful software engineer.
+By default, **Mimo** behaves like a helpful software engineer.
 
-If you want the bot to behave differently, you can use a custom prompt.
+If you want **Mimo** to behave differently, you can use a custom prompt.
 
-This can be done in a new channel dedicated to the bot, or a new conversation thread, or in DMs.
+This can be done in a new channel dedicated to **Mimo**, or a new conversation thread, or in DMs.
 
-You can use the `/mochi-prompt` command, if you have the permissions, and you can set the custom prompt
-for the bot by filling the form.
+You can use the `/prompt` command, if you have the permissions, and you can set the custom prompt
+for **Mimo** by filling the form.
 
 This command can be used in:
 - channels (if you are a server admin)
@@ -293,18 +293,18 @@ This command can be used in:
 - DMs
 
 The temperature is the same as OpenAI's temperature parameter. 0 means it becoems repetitive, 1 means it becomes a bit chaotic.
-Default is 0.8 for mochiGPT.
+Default is 0.8 for **Mimo**.
 
 ![custom-prompt.png](custom-prompt.png)
 
 
 ## Contributions
 
-We welcome contributions to mochiGPT. If you have an idea for a new feature or have found a bug,
+We welcome contributions to **Mimo**. If you have an idea for a new feature or have found a bug,
 please open an issue on GitHub. We would also appreciate any sponsorships or donations.
 
-You can sponsor us through our GitHub sponsor page [here](https://github.com/sponsors/vikkshan).
+You can sponsor us through our GitHub sponsor page [here](https://github.com/sponsors/vixshan).
 
 ## License
 
-mochiGPT is released under the MIT License.
+**Mimo** is released under the MIT License.
