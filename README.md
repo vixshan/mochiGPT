@@ -72,7 +72,7 @@ You also need to enable the Message Content Intent:
 To use **Mimo**, you will need to:
 - Clone the project:
 ```
-git clone https://github.com/vikkshan/mimo.git
+git clone https://github.com/vixshan/mimo.git
 ```
 - Open the terminal in the project's folder:
 ```
