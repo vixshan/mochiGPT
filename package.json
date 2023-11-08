@@ -24,7 +24,7 @@
     "@types/lodash": "^4.14.194",
     "@types/pnpapi": "^0.0.3",
     "@types/rimraf": "^4.0.5",
-    "@types/uuid": "^9.0.1",
+    "@types/uuid": "^9.0.7",
     "cross-env": "^7.0.3",
     "nodemon": "^3.0.1",
     "rimraf": "^5.0.5",
