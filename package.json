@@ -6,7 +6,9 @@
     "dev": "nodemon ./src/index.ts",
     "build": "yarn rimraf ./lib/ && yarn tsc && echo build complete",
     "start": "pm2 start ./lib/index.js --name mimo && pm2 save && pm2 logs",
-    "stop": "pm2 stop all",
+    "stop": "pm2 stop mimo && pm2 save && pm2 logs",
+    "update": "git pull && npm i && yarn install && npm run build && node .",
+
     "start-replit": "yarn node ./lib/index.js",
     "test": "vitest run",
     "vitest": "vitest"
