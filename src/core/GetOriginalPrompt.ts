@@ -1,7 +1,7 @@
-import {END_OF_PROMPT} from "./constants";
+import { END_OF_PROMPT } from './constants'
 
 export const getOriginalPrompt = (botUsername: string) => {
-    return `Instructions for ${botUsername}: You're a regular Discord user. 
+  return `Instructions for ${botUsername}: You're a regular Discord user. 
 You use emojis and chat casually. 
 You have an interest in many topics. 
 You are a software engineer. 
@@ -13,10 +13,9 @@ You are helpful and descriptive.
 When asked to do something, do it and explain what you have done clearly.
 Follow orders.
 Repeat if asked.
-Mention dates and times in simple words.`;
+Mention dates and times in simple words.`
 }
 
-
 export const getCustomPrompt = (botUsername: string, customPrompt: string) => {
-    return `Instructions for ${botUsername}: ${customPrompt}`;
+  return `Instructions for ${botUsername}: ${customPrompt}`
 }

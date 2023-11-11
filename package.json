@@ -7,7 +7,8 @@
     "build": "yarn rimraf ./lib/ && yarn tsc && echo build complete",
     "start": "pm2 start ./lib/index.js --name mimo && pm2 save && pm2 logs",
     "stop": "pm2 stop mimo && pm2 save && pm2 logs",
-    "update": "git pull && npm i && yarn install && npm run build && npm run dev",
+    "update": "git pull && npm i && yarn install && npm run format && npm run build",
+    "format": "prettier --write .",
     "start-replit": "yarn node ./lib/index.js",
     "test": "vitest run",
     "vitest": "vitest"
@@ -50,6 +51,7 @@
     "pinecone-client": "^1.1.0",
     "pm2": "^5.3.0",
     "pnpapi": "^0.0.0",
+    "prettier": "^3.0.3",
     "ts-toolbelt": "^9.6.0",
     "tsc": "^2.0.4",
     "uuid": "^9.0.0"

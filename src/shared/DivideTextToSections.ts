@@ -1,52 +1,52 @@
 export function divideTextToSections(message: string, maxLength: number) {
-    let sectionStart = 0;
-    let sectionEnd = 0;
+  let sectionStart = 0
+  let sectionEnd = 0
 
-    const nonWhitespaceRegex = /\S+$/;
+  const nonWhitespaceRegex = /\S+$/
 
-    const sections: string[] = [];
+  const sections: string[] = []
 
-    let currentCodeBlockStart: string | null = null;
+  let currentCodeBlockStart: string | null = null
 
-    while (sectionEnd < message.length) {
-        sectionEnd = Math.min(sectionStart + maxLength, message.length);
+  while (sectionEnd < message.length) {
+    sectionEnd = Math.min(sectionStart + maxLength, message.length)
 
-        let section = message.slice(sectionStart, sectionEnd);
-        if (sectionEnd < message.length) {
-            const nonWhitespaceMatch = section.match(nonWhitespaceRegex);
-            if (nonWhitespaceMatch != null) {
-                const matchLength = nonWhitespaceMatch[0].length;
-                if (matchLength < section.length - 1) {
-                    sectionEnd -= matchLength;
-                }
-
-                section = message.slice(sectionStart, sectionEnd);
-            }
+    let section = message.slice(sectionStart, sectionEnd)
+    if (sectionEnd < message.length) {
+      const nonWhitespaceMatch = section.match(nonWhitespaceRegex)
+      if (nonWhitespaceMatch != null) {
+        const matchLength = nonWhitespaceMatch[0].length
+        if (matchLength < section.length - 1) {
+          sectionEnd -= matchLength
         }
 
-        section = section.trimEnd();
-        sectionStart = sectionStart + Math.max(section.length, 1);
-
-        // handle code blocks...
-        if (currentCodeBlockStart != null) {
-            section = currentCodeBlockStart + '\n' + section;
-            currentCodeBlockStart = null;
-        }
-
-        const codeBlockMatches = section.match(/```\S*/g);
-        if (codeBlockMatches != null && codeBlockMatches.length % 2 === 1) {
-            const lastCodeBlock = codeBlockMatches[codeBlockMatches.length - 1];
-
-            // console.log({section, lastCodeBlock});
-
-            currentCodeBlockStart = lastCodeBlock;
-
-            // close code block in section
-            section += '\n```';
-        }
-
-        sections.push(section);
+        section = message.slice(sectionStart, sectionEnd)
+      }
     }
 
-    return sections;
+    section = section.trimEnd()
+    sectionStart = sectionStart + Math.max(section.length, 1)
+
+    // handle code blocks...
+    if (currentCodeBlockStart != null) {
+      section = currentCodeBlockStart + '\n' + section
+      currentCodeBlockStart = null
+    }
+
+    const codeBlockMatches = section.match(/```\S*/g)
+    if (codeBlockMatches != null && codeBlockMatches.length % 2 === 1) {
+      const lastCodeBlock = codeBlockMatches[codeBlockMatches.length - 1]
+
+      // console.log({section, lastCodeBlock});
+
+      currentCodeBlockStart = lastCodeBlock
+
+      // close code block in section
+      section += '\n```'
+    }
+
+    sections.push(section)
+  }
+
+  return sections
 }

@@ -1,12 +1,13 @@
 # **Mimo**
 
-| :exclamation:  This is a work in progress :exclamation: |
-|--------------------------------------------------------------------------------------------------------------------------------------------------|
+| :exclamation: This is a work in progress :exclamation: |
+| ------------------------------------------------------ |
 
-**Mimo** is an OpenAI based chat-bot that is similar to OpenAI's [ChatGPT](https://chat.openai.com/).
+**Mimo** is an OpenAI based chat-bot that is similar to OpenAI's
+[ChatGPT](https://chat.openai.com/).
 
-It allows users to converse with a virtual companion. It uses `nodejs` and `typescript`.
-to create a seamless conversation experience.
+It allows users to converse with a virtual companion. It uses `nodejs` and
+`typescript`. to create a seamless conversation experience.
 
 It can also generate images based on your conversation!
 
@@ -21,23 +22,29 @@ You can try **Mimo** on the official Discord server:
 ## Usage
 
 To interact with **Mimo**, users can:
+
 - Use the `/mimo` command to start a conversation with **Mimo**
 - Ping **Mimo** in a channel she's in
 - DM **Mimo**
 
-The `/mimo` command will start a new conversation thread, and whenever the user types something, **Mimo** will respond.
+The `/mimo` command will start a new conversation thread, and whenever the user
+types something, **Mimo** will respond.
 
-**Mimo** is able to handle multiple conversations at once,
-so you can start as many conversations as you like.
+**Mimo** is able to handle multiple conversations at once, so you can start as
+many conversations as you like.
 
 ## Bot Setup
-Set up a discord bot [here](https://discord.com/developers/applications/) and add it to your server.
+
+Set up a discord bot [here](https://discord.com/developers/applications/) and
+add it to your server.
 
 Scopes:
+
 - bot
 - application.commands
 
 Bot Permissions:
+
 - read messages/view channels
 - send messages
 - create public threads
@@ -66,33 +73,44 @@ You also need to enable the Message Content Intent:
 
 - [Nodejs](https://nodejs.org/en/): (18 or above)
 
-- [pm2](https://pm2.io/docs/runtime/guide/installation/): To keep your bot alive even after killing your terminal.
-
+- [pm2](https://pm2.io/docs/runtime/guide/installation/): To keep your bot alive
+  even after killing your terminal.
 
 To use **Mimo**, you will need to:
+
 - Clone the project:
+
 ```
 git clone https://github.com/vixshan/mimo.git
 ```
+
 - Open the terminal in the project's folder:
+
 ```
 cd mimo
 ```
+
 (in windows, right click somewhere in the folder and select "Open In Terminal")
-if you see something about powershell, type `cmd` and hit enter, to go to the simpler command line terminal.
+if you see something about powershell, type `cmd` and hit enter, to go to the
+simpler command line terminal.
+
 - Install dependancies:
+
 ```
 npm install
 yarn install
 ```
+
 - Set up environment variables
 
 ## Setting up Environment Variables
 
 The following environment variables are required for **Mimo** to work properly.
 
-You can set the environment variables in any way you like, or place an `.env.local` file at the root of your project (rename `example.env.local` to `.env.local`),
-Ensure that your `.env.local` looks like this:
+You can set the environment variables in any way you like, or place an
+`.env.local` file at the root of your project (rename `example.env.local` to
+`.env.local`), Ensure that your `.env.local` looks like this:
+
 <details>
   <summary> [EXPAND] Click to see `.env.local`</summary>
   
@@ -102,22 +120,19 @@ MONGODB_URI=
 DB_NAME=mimo
 
 # Bot Token from Discord:
+
 BOT_TOKEN=
 
 # Commands:
-COMMAND_NAME=mimo
-PRIVATE_COMMAND_NAME=private
-CONFIG_COMMAND_NAME=config
-CUSTOM_PROMPT_COMMAND_NAME=prompt
-DRAW_COMMAND_NAME=draw
+
+COMMAND_NAME=mimo PRIVATE_COMMAND_NAME=private CONFIG_COMMAND_NAME=config
+CUSTOM_PROMPT_COMMAND_NAME=prompt DRAW_COMMAND_NAME=draw
 
 # Discord Server Details:
-MAIN_SERVER_ID=
-LOG_CHANNEL_ID=
-MAIN_SERVER_INVITE=
-ADMIN_PING_ID=
-USE_SAME_API_KEY_FOR_ALL=false
-IGNORE_INIT=false
+
+MAIN_SERVER_ID= LOG_CHANNEL_ID= MAIN_SERVER_INVITE= ADMIN_PING_ID=
+USE_SAME_API_KEY_FOR_ALL=false IGNORE_INIT=false
+
 ```
 </details>
 
@@ -145,7 +160,7 @@ Discord Server Details:
   server)
 - USE_SAME_API_KEY_FOR_ALL: (Optional) When set to 'true', it will allow any server or user to use the bot without needing to provide their own API keys.
 - ADMIN_PING_ID: Bot owner's Discord id (that's you!)
-  
+
   Used to let you send some special commands and configure the bot.
 - IGNORE_INIT: (Optional) When set to 'true', when it starts, will not check active threads for new messages
   since the bot was last online.
@@ -164,32 +179,46 @@ Set up the environment variables as described above.
 With npm:
 
 ```
+
 npm install pm2 -g
+
 ```
 With yarn:
 
 ```
+
 yarn global add pm2
+
 ```
 With debian, use the install script:
 
 ```
-apt update && apt install sudo curl && curl -sL https://raw.githubusercontent.com/Unitech/pm2/master/packager/setup.deb.sh | sudo -E bash -
+
+apt update && apt install sudo curl && curl -sL
+https://raw.githubusercontent.com/Unitech/pm2/master/packager/setup.deb.sh |
+sudo -E bash -
+
 ```
-- Then to start a development environment, run 
+- Then to start a development environment, run
 ```
+
 npm run dev
+
 ```
 This way, whenever you change the code, it will restart the bot to update.
 
-- To build and start the bot, run 
+- To build and start the bot, run
 ```
+
 npm run build
-``` 
-and then 
+
 ```
+and then
+```
+
 npm start
-```
+
+````
 >You can also run `npm run start` to start the bot.
 
 - NOTE: running `npm start` or `npm run start` will start the bot with PM2 and give it the name "mimo". You can replace "mimo" with a name of your choice in [package.json](./package.json). It will also show logs for the PM2 running processes and save them.
@@ -197,26 +226,38 @@ npm start
 >NOTE: If you get the error:
 ```js
 [PM2][ERROR] Script already launched, add -f option to force re-execution
-```
->It means that mimo is already running. You can delete her by running the following command followed by the command to start mimo, i.e. `npm run start`:
+````
+
+> It means that mimo is already running. You can delete her by running the
+> following command followed by the command to start mimo, i.e. `npm run start`:
+
 ```
 pm2 delete mimo
 npm run start
 ```
+
 > Or simply restart it by running:
+
 ```
 pm2 restart mimo
 ```
 
-- If you are in dev environment, use `node .` or `npm run dev` to test your code:
+- If you are in dev environment, use `node .` or `npm run dev` to test your
+  code:
+
 ```
 node .
 ```
+
 Once you are satisfied with the changes run:
+
 ```
 pm2 restart mimo && pm2 logs
 ```
-You can also restart it from the [pm2.io dashboard](https://pm2.io/) as shown bellow:
+
+You can also restart it from the [pm2.io dashboard](https://pm2.io/) as shown
+bellow:
+
 <details>
 <summary>Expand to see image</summary>
 
@@ -226,7 +267,8 @@ You can also restart it from the [pm2.io dashboard](https://pm2.io/) as shown be
 
 ## Configuration
 
-Go to your server, and type the `config` command, and set the API key for your server.
+Go to your server, and type the `config` command, and set the API key for your
+server.
 
 ```
 /config
@@ -239,8 +281,6 @@ Go to your server, and type the `config` command, and set the API key for your s
 
 </details>
 
-
-
 ## Long-Term Memory
 
 Starting from 2.0.0, **Mimo** has the capacity to have a long-term memory.
@@ -249,14 +289,22 @@ Starting from 2.0.0, **Mimo** has the capacity to have a long-term memory.
 
 <summary> Expand to see how to configure long term memory. </summary>
 
-This functionality is experimental, but internal testing shows that it works quite well for typical conversation.
+This functionality is experimental, but internal testing shows that it works
+quite well for typical conversation.
 
-Does not work so well if the conversation has long pieces of code, because of token limitations.
+Does not work so well if the conversation has long pieces of code, because of
+token limitations.
 
 How it works:
-- **Mimo** creates [embeddings](https://openai.com/blog/new-and-improved-embedding-model/) for every message in the conversation
-- if the conversation is short, all the conversation history is included in the prompt
-- if the conversation is long enough, when a new message is sent, that message's embedding is compared to the conversation history, and only the most relevant messages will be included in the prompt.
+
+- **Mimo** creates
+  [embeddings](https://openai.com/blog/new-and-improved-embedding-model/) for
+  every message in the conversation
+- if the conversation is short, all the conversation history is included in the
+  prompt
+- if the conversation is long enough, when a new message is sent, that message's
+  embedding is compared to the conversation history, and only the most relevant
+  messages will be included in the prompt.
 
 To set this up, use the config command on the main server:
 
@@ -276,34 +324,38 @@ If you did it correctly, you should see something like this:
 
 </details>
 
-
 ## Custom Prompts
+
 By default, **Mimo** behaves like a helpful software engineer.
 
 If you want **Mimo** to behave differently, you can use a custom prompt.
 
-This can be done in a new channel dedicated to **Mimo**, or a new conversation thread, or in DMs.
+This can be done in a new channel dedicated to **Mimo**, or a new conversation
+thread, or in DMs.
 
-You can use the `/prompt` command, if you have the permissions, and you can set the custom prompt
-for **Mimo** by filling the form.
+You can use the `/prompt` command, if you have the permissions, and you can set
+the custom prompt for **Mimo** by filling the form.
 
 This command can be used in:
+
 - channels (if you are a server admin)
 - threads (if you are the one who created the thread)
 - DMs
 
-The temperature is the same as OpenAI's temperature parameter. 0 means it becoems repetitive, 1 means it becomes a bit chaotic.
-Default is 0.8 for **Mimo**.
+The temperature is the same as OpenAI's temperature parameter. 0 means it
+becoems repetitive, 1 means it becomes a bit chaotic. Default is 0.8 for
+**Mimo**.
 
 ![custom-prompt.png](custom-prompt.png)
 
-
 ## Contributions
 
-We welcome contributions to **Mimo**. If you have an idea for a new feature or have found a bug,
-please open an issue on GitHub. We would also appreciate any sponsorships or donations.
+We welcome contributions to **Mimo**. If you have an idea for a new feature or
+have found a bug, please open an issue on GitHub. We would also appreciate any
+sponsorships or donations.
 
-You can sponsor us through our GitHub sponsor page [here](https://github.com/sponsors/vixshan).
+You can sponsor us through our GitHub sponsor page
+[here](https://github.com/sponsors/vixshan).
 
 ## License
 

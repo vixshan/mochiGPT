@@ -5,9 +5,18 @@ name: Node.js CI
 
 on:
   push:
-    branches: [ "main", "development", "production", "gpt-shell", "beta", "alpha", "legacy" ]
+    branches:
+      [
+        'main',
+        'development',
+        'production',
+        'gpt-shell',
+        'beta',
+        'alpha',
+        'legacy',
+      ]
   pull_request:
-    branches: [ "main" ]
+    branches: ['main']
 
 jobs:
   build:
@@ -22,12 +31,11 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
-    - run: yarn
-    - run: yarn build --if-present
-    - run: yarn test
-    
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: yarn
+      - run: yarn build --if-present
+      - run: yarn test

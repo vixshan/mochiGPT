@@ -1,3 +1,6 @@
-import {BaseConversation} from "./BaseConversation";
+import { BaseConversation } from './BaseConversation'
 
-export const conversationCache: Record<string, BaseConversation | undefined | null> = {};
+export const conversationCache: Record<
+  string,
+  BaseConversation | undefined | null
+> = {}

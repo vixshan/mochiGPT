@@ -1,3 +1,3 @@
-import {KeyValueDB} from "./mongodb";
+import { KeyValueDB } from './mongodb'
 
-export const db = new KeyValueDB();
+export const db = new KeyValueDB()

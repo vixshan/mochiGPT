@@ -1,1 +1,1 @@
-export const messageReceivedInThread: Record<string, undefined | true> = {};
+export const messageReceivedInThread: Record<string, undefined | true> = {}

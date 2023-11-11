@@ -1,1 +1,1 @@
-export const THREAD_PREFIX = `THREAD-`;
+export const THREAD_PREFIX = `THREAD-`

@@ -1,9 +1,6 @@
 {
   "compilerOptions": {
-    "lib": [
-      "esnext",
-      "dom"
-    ],
+    "lib": ["esnext", "dom"],
     "module": "commonjs",
     "target": "ESNext",
     "strict": true,
@@ -16,12 +13,8 @@
     "sourceMap": true,
     "moduleResolution": "node",
     "paths": {
-      "@kroxilon/usda-parser": [
-        "./src/index.ts"
-      ]
+      "@kroxilon/usda-parser": ["./src/index.ts"]
     }
   },
-  "include": [
-    "src/**/*.ts"
-  ]
+  "include": ["src/**/*.ts"]
 }
