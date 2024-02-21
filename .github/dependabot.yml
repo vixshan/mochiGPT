@@ -15,7 +15,7 @@ updates:
     labels:
       - 'dependencies'
     ignore:
-      - dependancy-name: 'pinecone-client'
+      - dependency-name: 'pinecone-client'
         # - dependency-name: "discord.js"
 
   # Maintain dependencies for GitHub Actions
