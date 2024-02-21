@@ -17,3 +17,14 @@ updates:
     ignore:
       - dependancy-name: 'pinecone-client'
         # - dependency-name: "discord.js"
+
+  # Maintain dependencies for GitHub Actions
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'daily'
+    open-pull-requests-limit: 5
+    reviewers:
+      - 'vixshan'
+    labels:
+      - 'actions'
