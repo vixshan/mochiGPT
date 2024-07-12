@@ -41,7 +41,7 @@
     "@firtoz/openai-wrappers": "^3.0.3",
     "axios": "1.7.2",
     "canvas": "^2.11.2",
-    "discord-interactions": "^3.3.0",
+    "discord-interactions": "^4.0.0",
     "discord.js": "^14.9.0",
     "dotenv": "^16.0.3",
     "gpt3-tokenizer": "^1.1.5",
